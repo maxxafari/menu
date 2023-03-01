@@ -3,7 +3,6 @@ import logo from "./logo.svg";
 import "./App.css";
 import styled from "styled-components/macro";
 import { text } from "./text.js";
-import SecondLevelMenuItem from "./SecondLevelMenuItem.js";
 import FirstLevelMenuItem from "./FirstLevelMenuItem.js";
 // list of menu items
 const menuItems = [
@@ -113,18 +112,11 @@ function App() {
         <Menu>
           <MenuFiexd>
             {menuItems.map((item) => (
-              <FirstLevelMenuItem key={item.name}>
-                <span>{item.name}</span>
-                <div className="children">
-                  {item.menuItems?.map((item) => (
-                    <SecondLevelMenuItem
-                      key={item.name}
-                      item={item}
-                      current={current}
-                    />
-                  ))}
-                </div>
-              </FirstLevelMenuItem>
+              <FirstLevelMenuItem
+                key={item.name}
+                item={item}
+                current={current}
+              ></FirstLevelMenuItem>
             ))}
           </MenuFiexd>
         </Menu>
